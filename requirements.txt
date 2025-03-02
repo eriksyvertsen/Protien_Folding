@@ -1,7 +1,5 @@
-pip install py3Dmol flask
-flask
-ipywidgets
-modeller
+biopython==1.83
+matplotlib==3.8.4
+numpy==1.26.4
+streamlit==1.34.0
 spyprot
-matplotlib
-numpy

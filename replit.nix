@@ -1,5 +1,6 @@
 {pkgs}: {
   deps = [
+    pkgs.streamlit
     pkgs.tk
     pkgs.tcl
     pkgs.qhull

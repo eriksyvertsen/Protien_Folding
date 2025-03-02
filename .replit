@@ -1,27 +1,26 @@
-entrypoint = "main.py"
-modules = ["python-3.11"]
+run = ["streamlit", "run", "app.py"]
 
 [nix]
-channel = "stable-24_05"
+channel = "stable-22_11"
+
+[env]
+PYTHONPATH = "$PYTHONPATH:${REPL_HOME}"
+
+[packager]
+language = "python3"
+
+[packager.features]
+packageSearch = true
+guessImports = true
+enabledForHosting = false
 
 [unitTest]
 language = "python3"
 
-[gitHubImport]
-requiredFiles = [".replit", "replit.nix"]
+[languages]
 
-[deployment]
-run = ["python3", "main.py"]
-deploymentTarget = "cloudrun"
+[languages.python3]
+pattern = "**/*.py"
 
-[[ports]]
-localPort = 8080
-externalPort = 80
-
-[[ports]]
-localPort = 8081
-externalPort = 8081
-
-[[ports]]
-localPort = 8085
-externalPort = 3000
+[languages.python3.languageServer]
+start = "pylsp"
