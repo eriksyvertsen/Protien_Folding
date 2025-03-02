@@ -1,0 +1,7 @@
+pip install py3Dmol flask
+flask
+ipywidgets
+modeller
+spyprot
+matplotlib
+numpy
